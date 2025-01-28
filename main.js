@@ -26,7 +26,9 @@ function generateKey(keyLength, symbols) {
 // Заборонено використовувати for. Користуватися тільки методами масиву.
 
 function average(mixed) {
-    return mixed.filter(item => !isNaN(item) && typeof item === 'number');
+    mixed.filter(item => !isNaN(item) && typeof item === 'number');
+    mixed.reduce((a, b) => a + b ) / mixed.length ;
+
 
 
 }
