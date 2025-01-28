@@ -27,8 +27,8 @@ function generateKey(keyLength, symbols) {
 
 function average(mixed) {
     const filter = mixed.filter(item => !isNaN(item) && typeof item === 'number');
-    return filter.reduce((a, b) => a + b ) / filter.length ;
-
+    const sum = filter.reduce((a, b) => a + b ) / filter.length;
+    return Math.floor(sum)
 
 
 }
