@@ -26,12 +26,15 @@ function generateKey(keyLength, symbols) {
 // Заборонено використовувати for. Користуватися тільки методами масиву.
 
 function average(mixed) {
-    const filter = mixed.filter(item => !isNaN(item) && typeof item === 'number');
-    const sum = filter.reduce((a, b) => a + b ) / filter.length;
-    return Math.floor(sum)
+    const numbers = mixed.map(item => Number(item)).filter(num => !isNaN(num));
 
-
+    return numbers.length ? numbers.reduce((a, b) => a + b, 0) / numbers.length : 0;
 }
+
+
+
+
+
 
 // Check:
 console.log(average(['hello', 12, 'hi', 3, 4, 'another hell', 1, '5', 7, 'end', 0, 'you again?', 8])); // 5
