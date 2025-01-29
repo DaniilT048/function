@@ -6,6 +6,9 @@
 function generateKey(keyLength, symbols) {
     const arr = symbols.split('');
     arr.length = keyLength;
+    if(keyLength > symbols.length) {
+        arr.push(symbols)
+    }
     const random = arr.sort(function(){
         return Math.random() - 0.5;
     })
