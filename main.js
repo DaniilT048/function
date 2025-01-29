@@ -7,7 +7,7 @@ function generateKey(keyLength, symbols) {
     const arr = symbols.split('');
     arr.length = keyLength;
     const random = arr.sort(function(){
-        return Math.random() - symbols.length;
+        return Math.random() - 0.5;
     })
     const result = arr.join('')
     return result;
@@ -18,9 +18,9 @@ const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
 const key = generateKey(16, characters);
 console.log(key); // eg599gb60q926j8i - випадкові символи з набору characters
 
-//const numbersOnly = '0123456789';
-//const numberKey = generateKey(25, numbersOnly);
-//console.log(numberKey); // 3847501826482930485728394 - випадкові символи з набору numbersOnly
+const numbersOnly = '0123456789';
+const numberKey = generateKey(25, numbersOnly);
+console.log(numberKey); // 3847501826482930485728394 - випадкові символи з набору numbersOnly
 
 // ============================================
 
