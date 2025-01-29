@@ -2,17 +2,8 @@
 
 // #1 Реалізуйте функцію generateKey(length, characters), яка повертає рядок випадкових символів із набору characters довжиною length
 // Функцію треба покласти в файл functions.js та імпортувати за допомогою import
-// import './functions'
-function generateKey(keyLength, symbols) {
-    const arr = symbols.split('');
-    const result = [];
-    for (let i = 0; i < keyLength; i++) {
-        const randomIndex = Math.floor(Math.random() * arr.length);
-        result.push(arr[randomIndex]);
-    }
-    result.sort(() => Math.random() - 0.5);
-    return result.join('');
-}
+import {generateKey} from './functions'
+
 // Check:
 const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
 const key = generateKey(16, characters);
