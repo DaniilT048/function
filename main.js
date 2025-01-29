@@ -4,15 +4,19 @@
 // Функцію треба покласти в файл functions.js та імпортувати за допомогою import
 // import './functions'
 function generateKey(keyLength, symbols) {
-    keyLength = symbols.length;
-
-
+    const arr = symbols.split('');
+    arr.length = keyLength;
+    const random = arr.sort(function(){
+        return Math.random() - symbols.length;
+    })
+    const result = arr.join('')
+    return result;
 
 }
 // Check:
-// const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
-// const key = generateKey(16, characters);
-// console.log(key); // eg599gb60q926j8i - випадкові символи з набору characters
+const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+const key = generateKey(16, characters);
+console.log(key); // eg599gb60q926j8i - випадкові символи з набору characters
 
 //const numbersOnly = '0123456789';
 //const numberKey = generateKey(25, numbersOnly);
@@ -30,11 +34,6 @@ function average(mixed) {
 
     return numbers.length ? numbers.reduce((a, b) => a + b, 0) / numbers.length : 0;
 }
-
-
-
-
-
 
 // Check:
 console.log(average(['hello', 12, 'hi', 3, 4, 'another hell', 1, '5', 7, 'end', 0, 'you again?', 8])); // 5
