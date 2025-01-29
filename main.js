@@ -2,16 +2,16 @@
 
 // #1 Реалізуйте функцію generateKey(length, characters), яка повертає рядок випадкових символів із набору characters довжиною length
 // Функцію треба покласти в файл functions.js та імпортувати за допомогою import
-import {generateKey} from './functions'
+// import { generateKey } from './functions.js'
 
 // Check:
-const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
-const key = generateKey(16, characters);
-console.log(key); // eg599gb60q926j8i - випадкові символи з набору characters
-
-const numbersOnly = '0123456789';
-const numberKey = generateKey(25, numbersOnly);
-console.log(numberKey); // 3847501826482930485728394 - випадкові символи з набору numbersOnly
+// const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+// const key = generateKey(16, characters);
+// console.log(key); // eg599gb60q926j8i - випадкові символи з набору characters
+//
+// const numbersOnly = '0123456789';
+// const numberKey = generateKey(25, numbersOnly);
+// console.log(numberKey); // 3847501826482930485728394 - випадкові символи з набору numbersOnly
 
 // ============================================
 
@@ -36,8 +36,18 @@ console.log(average([34, 'call me', 23, 'no, call me!', '11', 48, null, 51, {}, 
 // кожна цифра у своєму рядку
 // Заборонено використовувати for та [].flat()
 
-function showDeepArray(deep) {
-
+function showDeepArray(arrays, deep = 0) {
+    if (Array.isArray(arrays)){
+        arrays.forEach(item => {
+            if(typeof item === 'number'){
+                console.log('     '.repeat(deep), item);
+            }
+            else{
+                console.log('     '.repeat(deep), item);
+                showDeepArray(item, deep +1)
+            }
+        })
+    }
 }
 
 
