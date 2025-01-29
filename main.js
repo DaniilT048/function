@@ -5,16 +5,13 @@
 // import './functions'
 function generateKey(keyLength, symbols) {
     const arr = symbols.split('');
-    arr.length = keyLength;
-    if(keyLength > symbols.length) {
-        arr.push(symbols)
+    const result = [];
+    for (let i = 0; i < keyLength; i++) {
+        const randomIndex = Math.floor(Math.random() * arr.length);
+        result.push(arr[randomIndex]);
     }
-    const random = arr.sort(function(){
-        return Math.random() - 0.5;
-    })
-    const result = arr.join('')
-    return result;
-
+    result.sort(() => Math.random() - 0.5);
+    return result.join('');
 }
 // Check:
 const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
