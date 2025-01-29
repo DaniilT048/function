@@ -1,4 +1,3 @@
-export {generateKey}
 function generateKey(keyLength, symbols) {
         const arr = symbols.split('');
         const result = [];
@@ -9,3 +8,4 @@ function generateKey(keyLength, symbols) {
         result.sort(() => Math.random() - 0.5);
         return result.join('');
     }
+export {generateKey};
